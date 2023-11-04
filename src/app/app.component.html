@@ -18,10 +18,8 @@
     </div>
     <!-- PRESENTATION -->
 
-    <div class="lg:text-center lg:px-20">
-      <span
-        class="text-lg text-justify font-light lg:text-xl xl:text-2xl 2xl:text-3xl"
-      >
+    <div class="lg:text-center lg:px-20 2xl:px-52">
+      <span class="text-lg text-justify font-light lg:text-xl">
         O <span class="font-black">Canal Maneirando</span>, apresentado pela
         dupla Neto Lyra e Guilherme Yuri, é um dos maiores canais de
         curtas-metragens e esquetes de comédia em seu segmento no mundo.
@@ -29,54 +27,66 @@
     </div>
 
     <!-- CAROUSEL -->
-    <div class="carousel">
+    <div class="carousel mb-5 2xl:px-52">
       <div class="carousel-slider">
         <div class="flex flex-row relative">
+          <!-- CONTROLLER LEFT -->
+
           <!-- LEFT -->
           <img
-            class="absolute bottom-0 w-4/6 p-2 opacity-60"
+            class="absolute bottom-0 w-4/6 p-2 opacity-60 sm:w-1/2"
             [src]="slider[sliderCount - 1]"
             alt=""
           />
+
           <!-- FIRST CASE / CASE SLIDER[0] -->
           <img
-            class="absolute bottom-0 w-4/6 p-2 opacity-60"
+            class="absolute bottom-0 w-4/6 p-2 opacity-60 sm:w-1/2"
             *ngIf="0 >= sliderCount"
-            [src]="slider[4]"
+            [src]="slider[slider.length - 1]"
             alt=""
           />
-          <!-- CENTER -->
-          <img class="w-72 ml-10 z-10" [src]="slider[sliderCount]" alt="" />
 
-          <!-- RIGHT -->
-          <!-- LAST CASE / CASE SLIDER[4] -->
+          <!-- CENTER -->
 
           <img
-            class="absolute bottom-0 right-0 w-4/6 p-2 opacity-60"
+            class="w-72 ml-10 z-10 sm:w-4/6 sm:ml-24 md:ml-32 lg:ml-40 xl:ml-48 2xl:ml-56"
+            [src]="slider[sliderCount]"
+            alt=""
+          />
+
+          <!-- RIGHT -->
+
+          <img
+            class="absolute bottom-0 right-0 w-4/6 p-2 opacity-60 sm:w-1/2"
             [src]="slider[sliderCount + 1]"
             alt=""
           />
 
+          <!-- LAST CASE / CASE SLIDER[4] -->
           <img
-            class="absolute bottom-0 right-0 w-4/6 p-2 opacity-60"
-            *ngIf="sliderCount >= 4"
+            class="absolute bottom-0 right-0 w-4/6 p-2 opacity-60 sm:w-1/2"
+            *ngIf="sliderCount + 1 === slider.length"
             [src]="slider[0]"
             alt=""
           />
-
-          <div class="carousel-controller flex flex-row">
-            <img
-              (click)="previousSlide()"
-              class="absolute bottom-20 left-0"
-              src="../assets/icons/leftArrow.svg"
-              alt=""
-            />
-            <img
-              (click)="nextSlide()"
-              class="absolute right-0 bottom-20"
-              src="../assets/icons/rightArrow.svg"
-              alt=""
-            />
+        </div>
+        <div class="carousel-controller">
+          <div class="flex flex-row justify-evenly">
+            <div (click)="previousSlide()" class="">
+              <img
+                class="w-14 md:w-20 cursor-pointer"
+                src="../assets/icons/leftArrow.svg"
+                alt=""
+              />
+            </div>
+            <div (click)="nextSlide()" class="">
+              <img
+                class="w-14 md:w-20 cursor-pointer"
+                src="../assets/icons/rightArrow.svg"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -231,74 +241,90 @@
 
   <!-- WAVE -->
 
-  <!-- MONTHLY VIEWS -->
-  <div class="flex p-3">
-    <img
-      class="flex justify-start lg:px-24 xl:px-48"
-      src="../assets/images/frame1.png"
-      alt=""
-    />
+  <!-- YOUTUBE CAROUSEL -->
+  <div class="youtube-carousel">
+    <div class="carousel">
+      <img
+        class="px-5 lg:px-32 xl:px-48 2xl:px-56"
+        [src]="youtubeSlider[youtubeCount]"
+        alt=""
+      />
+    </div>
   </div>
 
   <!-- WAVE 2 -->
 
   <img src="../assets/waves/wave2.svg" alt="" />
 
-  <!-- RELEVANCE -->
+  <!-- PUBLIC RELEVANCE -->
 
-  <div class="bg-yellow-400">
-    <div class="p-3 lg:p-8">
-      <div class="lg:text-center">
-        <span class="text-3xl font-black 2xl:text-5xl uppercase">
-          conectado com o público
-        </span>
+  <div class="bg-yellow-400 px-3">
+    <!-- SCHOOLS -->
+    <div class="school-slider relative">
+      <span
+        class="text-3xl font-black xl:flex xl:justify-center lg:text-4xl 2xl:text-5xl uppercase"
+      >
+        conectado com o público
+      </span>
+      <div class="flex flex-row gap-x-2 justify-center mt-2 sm:gap-x-10">
+        <img
+          (click)="previousSchool()"
+          class="w-10 animate-pulse sm:w-16 cursor-pointer"
+          src="../assets/icons/leftArrow.svg"
+          alt=""
+        />
+
+        <img
+          class="w-4/5 object-scale-down rounded-md shadow-lg sm:w-1/2 lg:w-72"
+          [src]="schoolSlider[schoolCount]"
+          alt=""
+        />
+        <img
+          (click)="nextSchool()"
+          class="w-10 animate-pulse sm:w-16 cursor-pointer"
+          src="../assets/icons/rightArrow.svg"
+          alt=""
+        />
       </div>
+    </div>
 
-      <div class="flex flex-col mt-2 gap-4">
-        <!-- PUBLIC -->
-        <div class="flex flex-col">
-          <img
-            class="rounded-md lg:px-10 xl:px-20 2xl:px-36"
-            src="../assets/images/framegrid.png"
-            alt=""
-          />
-        </div>
+    <!-- INTERVIEWS -->
 
-        <!-- INTERNET -->
+    <div class="interview-slider mt-10">
+      <span
+        class="text-3xl font-black lg:text-4xl xl:flex xl:justify-center 2xl:text-5xl uppercase"
+      >
+        relevancia dentro e fora da internet
+      </span>
+      <div class="flex justify-center mt-2">
+        <img
+          class="object-scale-down rounded-md shadow-lg md:w-1/2"
+          [src]="interviewSlider[interviewCount]"
+          alt=""
+        />
+      </div>
+    </div>
 
-        <div class="flex flex-col">
-          <div class="lg:text-center lg:p-5">
-            <span class="text-3xl font-black 2xl:text-5xl uppercase"
-              >relevância dentro e fora da internet</span
-            >
-          </div>
-          <img
-            class="rounded-sm lg:px-10 xl:px-20 2xl:px-36 mt-2"
-            src="../assets/images/framegrid2.png"
-            alt=""
-          />
-        </div>
+    <!-- INFLUENCERS -->
 
-        <!-- INFLUENCE -->
-
-        <div class="flex flex-col">
-          <div class="lg:text-center lg:pb-5">
-            <span class="text-3xl font-black 2xl:text-5xl uppercase"
-              >influência no cenário</span
-            >
-          </div>
-
-          <div
-            class="grid grid-cols-2 mt-2 gap-2 lg:justify-around lg:px-10 xl:px-20 2xl:px-36 lg:flex lg:flex-row lg:flex-wrap"
-          >
-            <img
-              class="rounded-lg lg:w-72"
-              *ngFor="let image of influencers"
-              [src]="image"
-              alt=""
-            />
-          </div>
-        </div>
+    <div class="influencer-slider mt-10">
+      <span
+        class="text-3xl font-black lg:text-4xl xl:flex xl:justify-center 2xl:text-5xl uppercase"
+      >
+        influência no cenário
+      </span>
+      <div class="flex justify-center mt-2">
+        <img
+          class="w-full rounded-md shadow-lg md:w-1/2"
+          [src]="influencers[influencerCount].image"
+          alt=""
+        />
+      </div>
+      <div class="text-sm font-semibold md:text-center">
+        Imagem:
+        <span class="uppercase text-base font-bold">{{
+          influencers[influencerCount].name
+        }}</span>
       </div>
     </div>
   </div>

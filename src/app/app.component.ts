@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Influencer } from './models/influencer';
 import { SocialMedia } from './models/social-media';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   mediaLinks: SocialMedia[] = [
     {
       name: 'Youtube',
@@ -44,17 +45,15 @@ export class AppComponent {
     },
   ];
 
-  influencers: string[] = [
-    '../assets/images/influencers/1.png',
-    '../assets/images/influencers/2.png',
-    '../assets/images/influencers/3.png',
-    '../assets/images/influencers/4.png',
-    '../assets/images/influencers/5.png',
-    '../assets/images/influencers/6.png',
-    '../assets/images/influencers/7.png',
-    '../assets/images/influencers/8.png',
-    '../assets/images/influencers/9.png',
-  ];
+  // '../assets/images/influencers/1.png',
+  // '../assets/images/influencers/2.png',
+  // '../assets/images/influencers/3.png',
+  // '../assets/images/influencers/4.png',
+  // '../assets/images/influencers/5.png',
+  // '../assets/images/influencers/6.png',
+  // '../assets/images/influencers/7.png',
+  // '../assets/images/influencers/8.png',
+  // '../assets/images/influencers/9.png',
 
   // slider
 
@@ -67,23 +66,133 @@ export class AppComponent {
   ];
 
   sliderCount: number = 0;
+  sliderInterval: number = 5000;
 
   nextSlide() {
     this.sliderCount++;
 
-    if (this.sliderCount > 4) {
+    if (this.sliderCount >= this.slider.length) {
       this.sliderCount = 0;
     }
-
-    console.log(this.sliderCount);
   }
 
   previousSlide() {
     this.sliderCount--;
 
     if (this.sliderCount < 0) {
-      this.sliderCount = 4;
+      this.sliderCount = this.slider.length - 1;
     }
-    console.log(this.sliderCount);
+  }
+
+  // youtube slider
+
+  youtubeSlider: string[] = [
+    '../assets/youtubeSlider/biggest.png',
+    '../assets/youtubeSlider/monthly.png',
+    '../assets/youtubeSlider/views.png',
+  ];
+
+  youtubeCount: number = 0;
+  youtubeInterval: number = 3000;
+
+  // school slider
+
+  schoolSlider: string[] = [
+    '../assets/images/school/escola1.png',
+    '../assets/images/school/escola2.png',
+    '../assets/images/school/escola3.png',
+    '../assets/images/school/escola4.png',
+    '../assets/images/school/escola5.png',
+  ];
+
+  schoolCount: number = 0;
+  schoolInterval: number = 5000;
+
+  nextSchool() {
+    this.schoolCount++;
+
+    if (this.schoolCount >= this.schoolSlider.length) {
+      this.schoolCount = 0;
+    }
+  }
+
+  previousSchool() {
+    this.schoolCount--;
+
+    if (this.schoolCount < 0) {
+      this.schoolCount = this.schoolSlider.length - 1;
+    }
+  }
+
+  // interview slider
+
+  interviewSlider: string[] = [
+    '../assets/images/interviews/interview1.png',
+    '../assets/images/interviews/interview2.png',
+  ];
+
+  interviewCount: number = 0;
+  interviewInterval: number = 5000;
+
+  // influencer slider
+
+  influencers: Influencer[] = [
+    {
+      name: 'robin hood gamer',
+      image: '../assets/images/influencers/robinhood.png',
+    },
+    {
+      name: 'beto gamer & hey davi',
+      image: '../assets/images/influencers/beto&davi.png',
+    },
+    {
+      name: 'natan por aí',
+      image: '../assets/images/influencers/natan.png',
+    },
+    {
+      name: 'biel valadares & lucas guedes',
+      image: '../assets/images/influencers/biel&guedes.png',
+    },
+    {
+      name: 'wilou & watson',
+      image: '../assets/images/influencers/wilou&watson.png',
+    },
+    {
+      name: 'manolo rey & sérgio cantú, dubladores do homem-aranha',
+      image: '../assets/images/influencers/rey&cantu.png',
+    },
+  ];
+
+  influencerCount: number = 0;
+  influencerInterval: number = 3000;
+
+  ngOnInit(): void {
+    setInterval(() => {
+      if (this.sliderCount >= this.slider.length - 1) {
+        this.sliderCount = 0;
+      }
+      this.sliderCount++;
+    }, this.sliderInterval);
+
+    setInterval(() => {
+      this.youtubeCount++;
+      if (this.youtubeCount >= this.youtubeSlider.length - 1) {
+        this.youtubeCount = 0;
+      }
+    }, this.youtubeInterval);
+
+    setInterval(() => {
+      this.interviewCount++;
+      if (this.interviewCount > this.interviewSlider.length - 1) {
+        this.interviewCount = 0;
+      }
+    }, this.interviewInterval);
+
+    setInterval(() => {
+      this.influencerCount++;
+      if (this.influencerCount > this.influencers.length - 1) {
+        this.influencerCount = 0;
+      }
+    }, this.influencerInterval);
   }
 }
