@@ -55,4 +55,35 @@ export class AppComponent {
     '../assets/images/influencers/8.png',
     '../assets/images/influencers/9.png',
   ];
+
+  // slider
+
+  slider: string[] = [
+    '../assets/slider/aranha.png',
+    '../assets/slider/chave.png',
+    '../assets/slider/lacasa.png',
+    '../assets/slider/naruto.png',
+    '../assets/slider/zodiaco.png',
+  ];
+
+  sliderCount: number = 0;
+
+  nextSlide() {
+    this.sliderCount++;
+
+    if (this.sliderCount > 4) {
+      this.sliderCount = 0;
+    }
+
+    console.log(this.sliderCount);
+  }
+
+  previousSlide() {
+    this.sliderCount--;
+
+    if (this.sliderCount < 0) {
+      this.sliderCount = 4;
+    }
+    console.log(this.sliderCount);
+  }
 }
