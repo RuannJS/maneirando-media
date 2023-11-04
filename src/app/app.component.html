@@ -1,0 +1,410 @@
+<main class="">
+  <!-- INTRODUCTION -->
+  <div class="bg-yellow-400 pb-12 rounded-b-sm">
+    <img
+      class="lg:w-full"
+      src="../assets/images/introduction.png"
+      alt="maneirando introduction"
+    />
+  </div>
+
+  <!-- ABOUT  -->
+
+  <section class="flex flex-col justify-start gap-2 p-3 lg:p-8">
+    <div class="lg:text-center">
+      <span class="text-3xl font-black lg:text-4xl 2xl:text-5xl">
+        REFERÊNCIA EM ENTRETENIMENTO
+      </span>
+    </div>
+    <!-- PRESENTATION -->
+
+    <div class="lg:text-center lg:px-20">
+      <span class="text-lg font-light lg:text-xl xl:text-2xl 2xl:text-3xl">
+        O <span class="font-black">Canal Maneirando</span>, apresentado pela
+        dupla Neto Lyra e Guilherme Yuri, é um dos maiores canais de
+        curtas-metragens e esquetes de comédia em seu segmento no mundo.
+      </span>
+    </div>
+
+    <div class="flex justify-center">
+      <img
+        class="xl:w-96"
+        src="../assets/images/about.png"
+        alt="maneirando-about"
+      />
+    </div>
+
+    <!-- TEXT 1  -->
+
+    <div class="flex flex-col gap-1 lg:flex-row lg:justify-around">
+      <span
+        class="text-lg font-light lg:text-xl lg:pe-32 lg:ml-10 2xl:text-2xl"
+      >
+        Além do canal principal com
+        <span class="underline font-bold">7.6 milhões</span> de inscritos, a
+        dupla conta hoje com dois canais dedicados exclusivamente a Shorts na
+        plataforma, <span class="font-bold">Shorts Maneirando</span> e
+        <span class="font-bold">O Netinho</span>, que possuem
+        <span class="underline font-bold">1.3 milhões</span> e
+        <span class="underline font-bold">3.1 milhões de inscritos</span>,
+        respectivamente.
+      </span>
+
+      <!-- TEXT 2  -->
+
+      <span class="text-lg font-light lg:text-xl lg:pe-24 2xl:text-2xl">
+        O recente projeto <span class="font-bold">Maneirando TV</span> conta com
+        cerca de <span class="underline">200 mil inscritos</span> e uma média
+        mensal de <span class="underline">3 milhões inscritos</span>, além de
+        possuir audiência em transmissões em estreias de
+        <span class="underline">100 mil espectadores.</span>
+      </span>
+    </div>
+  </section>
+
+  <!-- CHANNEL NUMBERS -->
+
+  <div class="flex flex-col px-3 lg:px-8 half-yellow lg:mt-5">
+    <!-- INTRODUCTION -->
+
+    <div class="lg:flex lg:justify-center lg:mb-4">
+      <div class="flex flex-col">
+        <span
+          class="text-3xl font-black uppercase underline underline-offset-4 flex justify-start lg:text-4xl 2xl:text-5xl"
+          >maneirando</span
+        >
+        <span
+          class="uppercase font-bold text-lg flex justify-start lg:text-xl 2xl:text-2xl"
+        >
+          em números</span
+        >
+      </div>
+    </div>
+
+    <!-- IMAGE INTRO -->
+
+    <div class="md:flex md:justify-center sm:flex sm:justify-center">
+      <img
+        class="rounded-lg md:w-96 sm:w-80"
+        src="../assets/images/numbers1.png"
+        alt=""
+      />
+    </div>
+
+    <!-- CONTENT -->
+
+    <div class="flex flex-col mt-2 gap-5">
+      <!-- YOUTUBE -->
+
+      <div class="flex flex-col">
+        <div class="flex justify-center">
+          <img
+            class="w-20 justify-center lg:w-24"
+            src="../assets/icons/youtubeIcon.svg"
+            alt=""
+          />
+        </div>
+        <span
+          class="flex justify-center font-black text-xl uppercase lg:text-2xl"
+          >7.6 milhões</span
+        >
+        <hr class="border-2 border-black rounded-full lg:mx-52" />
+        <span class="flex justify-center uppercase lg:text-lg"
+          >de inscritos no Youtube</span
+        >
+      </div>
+
+      <!-- VIEWS -->
+
+      <div class="flex flex-col">
+        <div class="flex justify-center">
+          <img
+            class="w-20 justify-center lg:w-24"
+            src="../assets/icons/views.svg"
+            alt=""
+          />
+        </div>
+        <span
+          class="flex justify-center font-black text-xl uppercase lg:text2xl"
+          >+ de 3 bilhões</span
+        >
+        <hr class="border-2 border-black rounded-full lg:mx-52" />
+        <span class="flex justify-center uppercase lg:text-lg"
+          >de views em nossas redes</span
+        >
+      </div>
+
+      <!-- FOLLOWERS -->
+
+      <div class="flex flex-col">
+        <div class="flex justify-center">
+          <img
+            class="w-20 justify-center lg:w-24"
+            src="../assets/icons/follower.svg"
+            alt=""
+          />
+        </div>
+        <span
+          class="flex justify-center font-black text-xl uppercase lg:text-2xl"
+          >+ de 15 milhões</span
+        >
+        <hr class="border-2 border-black rounded-full lg:mx-52" />
+        <span class="flex justify-center uppercase lg:text-lg"
+          >de seguidores nas redes sociais</span
+        >
+      </div>
+
+      <!-- BIGGEST -->
+
+      <div class="flex flex-col">
+        <div class="flex justify-center">
+          <img
+            class="w-24 justify-center"
+            src="../assets/icons/trophy.svg"
+            alt=""
+          />
+        </div>
+        <span
+          class="flex justify-center font-black text-xl uppercase lg:text-2xl"
+          >o maior canal</span
+        >
+        <hr class="border-2 border-black rounded-full lg:mx-52" />
+        <span class="flex justify-center uppercase lg:text-lg"
+          >de comédia besteirol no mundo</span
+        >
+      </div>
+
+      <!-- SOCIAL MEDIA LINKS -->
+
+      <div class="flex flex-row justify-between items-center lg:justify-evenly">
+        <a target="_blank" *ngFor="let media of mediaLinks" [href]="media.link">
+          <img class="w-9 lg:w-16" [src]="media.icon" [alt]="media.name" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <img src="../assets/waves/wave.svg" alt="" />
+
+  <!-- WAVE -->
+
+  <!-- MONTHLY VIEWS -->
+  <div class="flex p-3">
+    <img
+      class="flex justify-start lg:px-24 xl:px-48"
+      src="../assets/images/frame1.png"
+      alt=""
+    />
+  </div>
+
+  <!-- WAVE 2 -->
+
+  <img src="../assets/waves/wave2.svg" alt="" />
+
+  <!-- RELEVANCE -->
+
+  <div class="bg-yellow-400">
+    <div class="p-3 lg:p-8">
+      <div class="lg:text-center">
+        <span class="text-3xl font-black 2xl:text-5xl">
+          RELEVANTE E CONECTADO
+        </span>
+      </div>
+
+      <div class="flex flex-col mt-2 gap-4">
+        <!-- PUBLIC -->
+
+        <div class="flex flex-col">
+          <div class="lg:text-center lg:p-5">
+            <span class="uppercase text-xl font-bold lg:text-3xl 2xl:text-4xl"
+              >com o público</span
+            >
+          </div>
+          <img
+            class="rounded-md lg:px-10 xl:px-20 2xl:px-36"
+            src="../assets/images/framegrid.png"
+            alt=""
+          />
+        </div>
+
+        <!-- INTERNET -->
+
+        <div class="flex flex-col">
+          <div class="lg:text-center lg:p-5">
+            <span class="uppercase text-xl font-bold lg:text-3xl 2xl:text-4xl"
+              >dentro e fora da internet</span
+            >
+          </div>
+          <img
+            class="rounded-sm lg:px-10 xl:px-20 2xl:px-36"
+            src="../assets/images/framegrid2.png"
+            alt=""
+          />
+        </div>
+
+        <!-- INFLUENCE -->
+
+        <div class="flex flex-col">
+          <div class="lg:text-center lg:pb-5">
+            <span class="uppercase text-xl font-bold lg:text-3xl 2xl:text-4xl"
+              >influência no cenário</span
+            >
+          </div>
+
+          <div
+            class="grid grid-cols-2 gap-2 lg:justify-around lg:px-10 xl:px-20 2xl:px-36 lg:flex lg:flex-row lg:flex-wrap"
+          >
+            <img
+              class="rounded-lg lg:w-72"
+              *ngFor="let image of influencers"
+              [src]="image"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WAVE -->
+  <img src="../assets/waves/wave.svg" alt="" />
+
+  <!-- AUDIENCE  -->
+
+  <div class="p-3 lg:p-8">
+    <div class="lg:text-center">
+      <span class="text-3xl font-black lg:text-4xl 2xl:text-5xl">
+        AUDIÊNCIA</span
+      >
+    </div>
+
+    <!-- GENDER -->
+    <div class="flex flex-col mt-2">
+      <div class="lg:text-center">
+        <span class="uppercase text-xl font-bold lg:text-3xl">Gênero</span>
+      </div>
+      <div class="flex flex-row sm:justify-evenly justify-between p-3">
+        <div class="flex flex-col">
+          <span class="uppercase flex justify-center text-lg font-bold"
+            >masculino</span
+          >
+          <div class="flex justify-center">
+            <img
+              class="w-32 lg:w-56"
+              src="../assets/icons/male.svg"
+              alt="male gender"
+            />
+          </div>
+          <span class="flex justify-center text-lg font-black">54.7%</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="uppercase flex justify-center text-lg font-bold"
+            >feminino</span
+          >
+          <div class="flex justify-center">
+            <img
+              class="w-32 lg:w-56"
+              src="../assets/icons/female.svg"
+              alt="male gender"
+            />
+          </div>
+          <span class="flex justify-center text-lg font-black">45.1%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGE RANGE -->
+
+    <div class="lg:text-center">
+      <span class="uppercase text-xl font-bold lg:text-3xl">FAIXA ETÁRIA</span>
+    </div>
+    <div class="flex flex-row mt-2 justify-around items-center">
+      <img
+        class="w-52 lg:w-80"
+        src="../assets/chart/chart.png"
+        alt="age range chart"
+      />
+      <div class="flex flex-col gap-2">
+        <div class="flex flex-row items-center gap-2">
+          <img
+            class="w-10 lg:w-20"
+            src="../assets/chart/GREEN.png"
+            alt="08-12"
+          />
+          <span class="text-lg font-bold">08-12</span>
+        </div>
+        <div class="flex flex-row items-center gap-2">
+          <img
+            class="w-10 lg:w-20"
+            src="../assets/chart/PINK.png"
+            alt="13-17"
+          />
+          <span class="text-lg font-bold">13-17</span>
+        </div>
+        <div class="flex flex-row items-center gap-2">
+          <img class="w-10 lg:w-20" src="../assets/chart/BLUE.png" alt="18+" />
+          <span class="text-lg font-bold">18+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEDIA SOLUTION -->
+
+  <div class="p-3 lg:p-8 lg:text-center">
+    <span class="text-3xl font-black uppercase 2xl:text-5xl">parceiros</span>
+
+    <img class="mt-5 2xl:w-full" src="../assets/images/partners.png" alt="" />
+  </div>
+
+  <img src="../assets/waves/wave2.svg" alt="" />
+
+  <div class="p-3 bg-yellow-400 lg:p-8 lg:text-center">
+    <div class="flex flex-col">
+      <span class="text-3xl font-black uppercase 2xl:text-5xl"
+        >soluções de mídia</span
+      >
+      <div class="flex justify-center">
+        <span class="text-lg font-light mt-5 lg:w-1/2 2xl:text-xl">
+          O <span class="font-bold">Canal Maneirando</span> possui grande
+          variedade de clientes ao longo dos anos, assim possui um time
+          especializado em entregar as melhores estratégias para os anunciantes
+          nas diversas plataformas e formatos.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="p-3 bg-yellow-400 lg:p-8 text-center">
+    <span class="text-3xl font-black uppercase 2xl:text-5xl"
+      >entre em contato</span
+    >
+    <div class="flex justify-center mt-4">
+      <img class="w-80 lg:w-96" src="../assets/images/frame2.png" alt="" />
+    </div>
+    <div class="flex flex-col gap-5 mt-2 lg:flex-row lg:justify-around">
+      <div class="flex flex-col items-center">
+        <img class="w-14 lg:w-20" src="../assets/icons/phone.svg" alt="" />
+        <span class="text-base font-bold lg:text-lg">(11) 98318-8579</span>
+        <span class="text-base font-bold lg:text-lg">(61) 99842-4103</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img class="w-14 lg:w-20" src="../assets/icons/email.svg" alt="" />
+        <a
+          class="text-base font-bold lg:text-lg"
+          href="mailto:contato@maneirando.com.br"
+          >contato@maneirando.com.br</a
+        >
+      </div>
+      <div class="flex flex-col items-center">
+        <img class="w-14 lg:w-20" src="../assets/icons/web.svg" alt="" />
+        <a
+          class="text-base font-bold lg:text-lg"
+          target="_blank"
+          href="maneirando.com.br"
+          >maneirando.com.br</a
+        >
+      </div>
+    </div>
+  </div>
+</main>

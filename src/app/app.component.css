@@ -1,0 +1,19 @@
+.half-yellow {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #ffffff 15%,
+    #facc15 15%,
+    #facc15 100%
+  );
+}
+
+.start-yellow {
+  background: linear-gradient(
+    to right,
+    #facc15 0%,
+    #facc15 15%,
+    #ffffff 15%,
+    #ffffff 100%
+  );
+}
