@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Influencer } from './models/influencer';
 import { SocialMedia } from './models/social-media';
 @Component({
@@ -6,7 +6,13 @@ import { SocialMedia } from './models/social-media';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
+  clearSliderInterval!: any;
+  clearYoutubeInterval!: any;
+  clearSchoolInterval!: any;
+  clearInterviewInterval!: any;
+  clearInfluencerInterval!: any;
+
   mediaLinks: SocialMedia[] = [
     {
       name: 'Youtube',
@@ -88,11 +94,11 @@ export class AppComponent implements OnInit {
   // school slider
 
   schoolSlider: string[] = [
-    '../assets/images/school/escola1.png',
-    '../assets/images/school/escola2.png',
-    '../assets/images/school/escola3.png',
-    '../assets/images/school/escola4.png',
-    '../assets/images/school/escola5.png',
+    '../assets/images/school/school1.jpg',
+    '../assets/images/school/school2.jpg',
+    '../assets/images/school/school3.jpg',
+    '../assets/images/school/school4.jpg',
+    '../assets/images/school/school5.jpg',
   ];
 
   schoolCount: number = 0;
@@ -103,6 +109,8 @@ export class AppComponent implements OnInit {
   interviewSlider: string[] = [
     '../assets/images/interviews/interview1.png',
     '../assets/images/interviews/interview2.png',
+    '../assets/images/interviews/interview3.jpg',
+    '../assets/images/interviews/interview4.png',
   ];
 
   interviewCount: number = 0;
@@ -112,68 +120,140 @@ export class AppComponent implements OnInit {
 
   influencers: Influencer[] = [
     {
-      name: 'robin hood gamer',
-      image: '../assets/images/influencers/robinhood.png',
+      name: 'athos',
+      image: '../assets/images/influencers/athos.jpg',
     },
     {
-      name: 'beto gamer & hey davi',
-      image: '../assets/images/influencers/beto&davi.png',
+      name: 'biel valadares e lucas guedes',
+      image: '../assets/images/influencers/valadares.jpg',
+    },
+    {
+      name: 'bruno vlogs e henrique memes',
+      image: '../assets/images/influencers/bruno&henrique.jpg',
+    },
+    {
+      name: 'chapoh e duduzito',
+      image: '../assets/images/influencers/chapo&duduzito.jpg',
+    },
+    {
+      name: 'coelho e bru',
+      image: '../assets/images/influencers/coelho&bru.jpg',
+    },
+    {
+      name: 'dando trela e jhonny',
+      image: '../assets/images/influencers/trela&jhony.jpg',
+    },
+    {
+      name: 'ei nerd e a gente faz agora',
+      image: '../assets/images/influencers/nerd&agora.jpg',
+    },
+    {
+      name: 'família arqueira',
+      image: '../assets/images/influencers/familiaarqueira.jpg',
+    },
+    {
+      name: 'irmãos lemos',
+      image: '../assets/images/influencers/irmaoslemos.jpg',
+    },
+    {
+      name: 'lucrazy e retarda marques',
+      image: '../assets/images/influencers/lucrazy&retarda.jpg',
+    },
+    {
+      name: 'mamute congelado',
+      image: '../assets/images/influencers/mamutecongelado.jpg',
+    },
+    {
+      name: 'manolo e sergio cantú',
+      image: '../assets/images/influencers/manolo&cantu.jpg',
+    },
+    {
+      name: 'mundo geek',
+      image: '../assets/images/influencers/mundogeek.jpg',
     },
     {
       name: 'natan por aí',
-      image: '../assets/images/influencers/natan.png',
+      image: '../assets/images/influencers/natan.jpg',
     },
     {
-      name: 'biel valadares & lucas guedes',
-      image: '../assets/images/influencers/biel&guedes.png',
+      name: 'noylan e mellu',
+      image: '../assets/images/influencers/noylan&mellu.jpg',
     },
     {
-      name: 'wilou & watson',
-      image: '../assets/images/influencers/wilou&watson.png',
+      name: 'o que não dizer',
+      image: '../assets/images/influencers/naodizer.jpg',
     },
     {
-      name: 'manolo rey & sérgio cantú, dubladores do homem-aranha',
-      image: '../assets/images/influencers/rey&cantu.png',
+      name: 'raphael rossato e helena palomanes',
+      image: '../assets/images/influencers/raphael&helena.jpg',
+    },
+    {
+      name: 'robin hood gamer',
+      image: '../assets/images/influencers/robinhood.jpg',
+    },
+    {
+      name: 'o que não dizer',
+      image: '../assets/images/influencers/naodizer.jpg',
+    },
+    {
+      name: 'voice makers',
+      image: '../assets/images/influencers/voicemakers.jpg',
+    },
+    {
+      name: 'wiris',
+      image: '../assets/images/influencers/wiris.jpg',
+    },
+    {
+      name: 'wirley contaifer e cadu paschoal',
+      image: '../assets/images/influencers/wirley&cadu.jpg',
     },
   ];
 
   influencerCount: number = 0;
-  influencerInterval: number = 3000;
+  influencerInterval: number = 2000;
 
   ngOnInit(): void {
-    setInterval(() => {
+    this.clearSliderInterval = setInterval(() => {
       if (this.sliderCount >= this.slider.length - 1) {
         this.sliderCount = 0;
       }
       this.sliderCount++;
     }, this.sliderInterval);
 
-    setInterval(() => {
-      this.schoolCount++;
-      if (this.schoolCount > this.schoolSlider.length - 1) {
-        this.schoolCount = 0;
-      }
-    }, this.schoolInterval);
-
-    setInterval(() => {
+    this.clearYoutubeInterval = setInterval(() => {
       this.youtubeCount++;
       if (this.youtubeCount >= this.youtubeSlider.length - 1) {
         this.youtubeCount = 0;
       }
     }, this.youtubeInterval);
 
-    setInterval(() => {
+    this.clearInterviewInterval = setInterval(() => {
       this.interviewCount++;
       if (this.interviewCount > this.interviewSlider.length - 1) {
         this.interviewCount = 0;
       }
     }, this.interviewInterval);
 
-    setInterval(() => {
+    this.clearInfluencerInterval = setInterval(() => {
       this.influencerCount++;
       if (this.influencerCount > this.influencers.length - 1) {
         this.influencerCount = 0;
       }
     }, this.influencerInterval);
+
+    this.clearSchoolInterval = setInterval(() => {
+      this.schoolCount++;
+      if (this.schoolCount > this.schoolSlider.length - 1) {
+        this.schoolCount = 0;
+      }
+    }, this.schoolInterval);
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.clearSchoolInterval);
+    clearInterval(this.clearInfluencerInterval);
+    clearInterval(this.clearSliderInterval);
+    clearInterval(this.clearYoutubeInterval);
+    clearInterval(this.clearInterviewInterval);
   }
 }

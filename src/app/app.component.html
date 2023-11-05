@@ -2,9 +2,12 @@
   <!-- INTRODUCTION -->
   <div class="bg-yellow-400 pb-12 rounded-b-sm">
     <img
+      width="1014"
+      height="580"
       class="lg:w-full"
-      src="../assets/images/introduction.png"
+      ngSrc="../assets/images/introduction.png"
       alt="maneirando introduction"
+      priority
     />
   </div>
 
@@ -43,7 +46,9 @@
           <img
             class="absolute bottom-0 w-4/6 p-2 opacity-60 sm:w-1/2"
             *ngIf="0 >= sliderCount"
-            [src]="slider[slider.length - 1]"
+            [ngSrc]="slider[slider.length - 1]"
+            width="456"
+            height="380"
             alt=""
           />
 
@@ -51,7 +56,10 @@
 
           <img
             class="w-72 ml-10 z-10 sm:w-4/6 sm:ml-24 md:ml-32 lg:ml-40 xl:ml-48 2xl:ml-56"
-            [src]="slider[sliderCount]"
+            [ngSrc]="slider[sliderCount]"
+            width="456"
+            height="380"
+            priority
             alt=""
           />
 
@@ -59,7 +67,9 @@
 
           <img
             class="absolute bottom-0 right-0 w-4/6 p-2 opacity-60 sm:w-1/2"
-            [src]="slider[sliderCount + 1]"
+            [ngSrc]="slider[sliderCount + 1]"
+            width="456"
+            height="380"
             alt=""
           />
 
@@ -76,14 +86,18 @@
             <div (click)="previousSlide()" class="">
               <img
                 class="w-14 md:w-16 cursor-pointer animate-pulse"
-                src="../assets/icons/leftArrow.svg"
+                width="80"
+                height="80"
+                ngSrc="../assets/icons/leftArrow.svg"
                 alt=""
               />
             </div>
             <div (click)="nextSlide()" class="">
               <img
+                width="80"
+                height="80"
                 class="w-14 md:w-16 cursor-pointer animate-pulse"
-                src="../assets/icons/rightArrow.svg"
+                ngSrc="../assets/icons/rightArrow.svg"
                 alt=""
               />
             </div>
@@ -140,7 +154,10 @@
     <div class="md:flex md:justify-center sm:flex sm:justify-center mt-2">
       <img
         class="rounded-lg md:w-96 sm:w-80"
-        src="../assets/images/numbers1.png"
+        ngSrc="../assets/images/numbers1.png"
+        width="479"
+        height="639"
+        priority
         alt=""
       />
     </div>
@@ -154,7 +171,9 @@
         <div class="flex justify-center">
           <img
             class="w-20 justify-center lg:w-24"
-            src="../assets/icons/youtubeIcon.svg"
+            width="1"
+            height="1"
+            ngSrc="../assets/icons/youtubeIcon.svg"
             alt=""
           />
         </div>
@@ -173,8 +192,10 @@
       <div class="flex flex-col">
         <div class="flex justify-center">
           <img
+            width="1"
+            height="1"
             class="w-20 justify-center lg:w-24"
-            src="../assets/icons/views.svg"
+            ngSrc="../assets/icons/views.svg"
             alt=""
           />
         </div>
@@ -194,7 +215,9 @@
         <div class="flex justify-center">
           <img
             class="w-20 justify-center lg:w-24"
-            src="../assets/icons/follower.svg"
+            width="1"
+            height="1"
+            ngSrc="../assets/icons/follower.svg"
             alt=""
           />
         </div>
@@ -213,8 +236,10 @@
       <div class="flex flex-col">
         <div class="flex justify-center">
           <img
+            width="1"
+            height="1"
             class="w-24 justify-center"
-            src="../assets/icons/trophy.svg"
+            ngSrc="../assets/icons/trophy.svg"
             alt=""
           />
         </div>
@@ -232,21 +257,37 @@
 
       <div class="flex flex-row justify-between items-center lg:justify-evenly">
         <a target="_blank" *ngFor="let media of mediaLinks" [href]="media.link">
-          <img class="w-9 lg:w-16" [src]="media.icon" [alt]="media.name" />
+          <img
+            class="w-9 lg:w-16"
+            width="72"
+            height="72"
+            [ngSrc]="media.icon"
+            [alt]="media.name"
+          />
         </a>
       </div>
     </div>
   </div>
-  <img src="../assets/waves/wave.svg" alt="" />
+  <img
+    width="300"
+    height="67"
+    priority=""
+    class="w-full"
+    ngSrc="../assets/waves/wave.svg"
+    alt=""
+  />
 
   <!-- WAVE -->
 
   <!-- YOUTUBE CAROUSEL -->
   <div class="youtube-carousel">
-    <div class="carousel">
+    <div class="carousel flex justify-center">
       <img
-        class="px-5 lg:px-32 xl:px-48 2xl:px-56"
-        [src]="youtubeSlider[youtubeCount]"
+        class="px-5 lg:px-20 xl:px-10 2xl:p-0"
+        [ngSrc]="youtubeSlider[youtubeCount]"
+        width="700"
+        height="466"
+        priority
         alt=""
       />
     </div>
@@ -254,7 +295,14 @@
 
   <!-- WAVE 2 -->
 
-  <img src="../assets/waves/wave2.svg" alt="" />
+  <img
+    width="300"
+    height="67"
+    priority=""
+    class="w-full"
+    ngSrc="../assets/waves/wave2.svg"
+    alt=""
+  />
 
   <!-- PUBLIC RELEVANCE -->
 
@@ -269,7 +317,10 @@
       <div class="flex flex-row gap-x-2 justify-center mt-2 sm:gap-x-10">
         <img
           class="w-4/5 object-scale-down rounded-md shadow-lg sm:w-1/2 lg:w-72"
-          [src]="schoolSlider[schoolCount]"
+          [ngSrc]="schoolSlider[schoolCount]"
+          priority=""
+          width="560"
+          height="1040"
           alt=""
         />
       </div>
@@ -286,7 +337,10 @@
       <div class="flex justify-center mt-2">
         <img
           class="object-scale-down rounded-md shadow-lg md:w-1/2"
-          [src]="interviewSlider[interviewCount]"
+          [ngSrc]="interviewSlider[interviewCount]"
+          width="732"
+          height="412"
+          priority
           alt=""
         />
       </div>
@@ -303,15 +357,12 @@
       <div class="flex justify-center mt-2">
         <img
           class="w-full rounded-md shadow-lg md:w-1/2"
-          [src]="influencers[influencerCount].image"
+          [ngSrc]="influencers[influencerCount].image"
+          priority
+          width="732"
+          height="412"
           alt=""
         />
-      </div>
-      <div class="text-sm font-semibold md:text-center">
-        Imagem:
-        <span class="uppercase text-base font-bold">{{
-          influencers[influencerCount].name
-        }}</span>
       </div>
     </div>
   </div>
@@ -341,7 +392,9 @@
           <div class="flex justify-center">
             <img
               class="w-32 lg:w-56"
-              src="../assets/icons/male.svg"
+              width="1"
+              height="1"
+              ngSrc="../assets/icons/male.svg"
               alt="male gender"
             />
           </div>
@@ -354,7 +407,9 @@
           <div class="flex justify-center">
             <img
               class="w-32 lg:w-56"
-              src="../assets/icons/female.svg"
+              width="1"
+              height="1"
+              ngSrc="../assets/icons/female.svg"
               alt="male gender"
             />
           </div>
@@ -371,14 +426,18 @@
     <div class="flex flex-row mt-2 justify-evenly items-center">
       <img
         class="w-52 lg:w-80"
-        src="../assets/chart/chart.png"
+        ngSrc="../assets/chart/chart.png"
+        width="1"
+        height="1"
         alt="age range chart"
       />
       <div class="flex flex-col gap-2">
         <div class="flex flex-row items-center gap-2">
           <img
             class="w-10 lg:w-20"
-            src="../assets/chart/GREEN.png"
+            ngSrc="../assets/chart/GREEN.png"
+            width="101"
+            height="85"
             alt="08-12"
           />
           <span class="text-lg font-bold">08-12</span>
@@ -386,13 +445,21 @@
         <div class="flex flex-row items-center gap-2">
           <img
             class="w-10 lg:w-20"
-            src="../assets/chart/PINK.png"
+            ngSrc="../assets/chart/PINK.png"
+            width="101"
+            height="85"
             alt="13-17"
           />
           <span class="text-lg font-bold">13-17</span>
         </div>
         <div class="flex flex-row items-center gap-2">
-          <img class="w-10 lg:w-20" src="../assets/chart/BLUE.png" alt="18+" />
+          <img
+            class="w-10 lg:w-20"
+            width="101"
+            height="85"
+            ngSrc="../assets/chart/BLUE.png"
+            alt="18+"
+          />
           <span class="text-lg font-bold">18+</span>
         </div>
       </div>
@@ -406,7 +473,14 @@
       >casos de sucesso</span
     >
 
-    <img class="mt-5 2xl:w-full" src="../assets/images/partners.png" alt="" />
+    <img
+      class="mt-5 2xl:w-full"
+      priority
+      width="1265"
+      height="685"
+      ngSrc="../assets/images/partners.png"
+      alt=""
+    />
   </div>
 
   <img src="../assets/waves/wave2.svg" alt="" />
@@ -430,7 +504,14 @@
   <!-- CONTACT -->
   <div class="p-3 bg-yellow-400 lg:p-8 text-center">
     <div class="flex justify-center">
-      <img class="w-80 lg:w-96" src="../assets/images/frame2.png" alt="" />
+      <img
+        class="w-80 lg:w-96"
+        width="1502"
+        height="1714"
+        ngSrc="../assets/images/frame2.png"
+        priority
+        alt=""
+      />
     </div>
     <div class="flex flex-col gap-5 mt-5 lg:flex-row lg:justify-around">
       <div class="flex flex-col items-center">
