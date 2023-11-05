@@ -96,23 +96,7 @@ export class AppComponent implements OnInit {
   ];
 
   schoolCount: number = 0;
-  schoolInterval: number = 5000;
-
-  nextSchool() {
-    this.schoolCount++;
-
-    if (this.schoolCount >= this.schoolSlider.length) {
-      this.schoolCount = 0;
-    }
-  }
-
-  previousSchool() {
-    this.schoolCount--;
-
-    if (this.schoolCount < 0) {
-      this.schoolCount = this.schoolSlider.length - 1;
-    }
-  }
+  schoolInterval: number = 2000;
 
   // interview slider
 
@@ -163,6 +147,13 @@ export class AppComponent implements OnInit {
       }
       this.sliderCount++;
     }, this.sliderInterval);
+
+    setInterval(() => {
+      this.schoolCount++;
+      if (this.schoolCount > this.schoolSlider.length - 1) {
+        this.schoolCount = 0;
+      }
+    }, this.schoolInterval);
 
     setInterval(() => {
       this.youtubeCount++;

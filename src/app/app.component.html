@@ -268,22 +268,8 @@
       </span>
       <div class="flex flex-row gap-x-2 justify-center mt-2 sm:gap-x-10">
         <img
-          (click)="previousSchool()"
-          class="w-10 animate-pulse sm:w-16 cursor-pointer"
-          src="../assets/icons/leftArrow.svg"
-          alt=""
-        />
-
-        <img
           class="w-4/5 object-scale-down rounded-md shadow-lg sm:w-1/2 lg:w-72"
           [src]="schoolSlider[schoolCount]"
-          alt=""
-        />
-        
-        <img
-          (click)="nextSchool()"
-          class="w-10 animate-pulse sm:w-16 cursor-pointer"
-          src="../assets/icons/rightArrow.svg"
           alt=""
         />
       </div>
@@ -382,7 +368,7 @@
     <div class="lg:text-center">
       <span class="uppercase text-xl font-bold lg:text-3xl">FAIXA ETÁRIA</span>
     </div>
-    <div class="flex flex-row mt-2 justify-around items-center">
+    <div class="flex flex-row mt-2 justify-evenly items-center">
       <img
         class="w-52 lg:w-80"
         src="../assets/chart/chart.png"
