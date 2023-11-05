@@ -45,16 +45,6 @@ export class AppComponent implements OnInit {
     },
   ];
 
-  // '../assets/images/influencers/1.png',
-  // '../assets/images/influencers/2.png',
-  // '../assets/images/influencers/3.png',
-  // '../assets/images/influencers/4.png',
-  // '../assets/images/influencers/5.png',
-  // '../assets/images/influencers/6.png',
-  // '../assets/images/influencers/7.png',
-  // '../assets/images/influencers/8.png',
-  // '../assets/images/influencers/9.png',
-
   // slider
 
   slider: string[] = [
