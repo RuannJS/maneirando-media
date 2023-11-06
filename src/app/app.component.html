@@ -61,8 +61,8 @@
             class="w-72 ml-10 z-10 sm:w-4/6 sm:ml-24 md:ml-32 lg:ml-40 xl:ml-48 2xl:ml-56"
             [ngSrc]="slider[sliderCount]"
             width="456"
-            height="380"
             priority
+            height="380"
             alt=""
           />
 
@@ -160,7 +160,6 @@
         ngSrc="../assets/images/numbers1.png"
         width="479"
         height="639"
-        priority
         alt=""
       />
     </div>
@@ -274,7 +273,6 @@
   <img
     width="300"
     height="67"
-    priority=""
     class="w-full"
     ngSrc="../assets/waves/wave.svg"
     alt=""
@@ -298,7 +296,6 @@
         [ngSrc]="youtubeSlider[youtubeCount]"
         width="700"
         height="466"
-        priority
         alt=""
       />
       <img
@@ -317,7 +314,6 @@
   <img
     width="300"
     height="67"
-    priority=""
     class="w-full"
     ngSrc="../assets/waves/wave2.svg"
     alt=""
@@ -361,7 +357,6 @@
             class="w-1/6 object-scale-down opacity-50"
             *ngIf="schoolCount > 0"
             [ngSrc]="schoolSlider[schoolCount - 1]"
-            priority=""
             width="560"
             height="1040"
             alt=""
@@ -381,7 +376,6 @@
             class="w-1/6 object-scale-down opacity-50"
             [ngSrc]="schoolSlider[schoolCount + 1]"
             *ngIf="schoolSlider.length - 1 > schoolCount"
-            priority=""
             width="560"
             height="1040"
             alt=""
@@ -392,7 +386,6 @@
             class="w-1/6 object-scale-down opacity-50"
             *ngIf="schoolCount >= schoolSlider.length - 1"
             [ngSrc]="schoolSlider[0]"
-            priority=""
             width="560"
             height="1040"
             alt=""
@@ -481,7 +474,6 @@
           <img
             class="lg:px-10 xl:px-28"
             [ngSrc]="influencers[influencerCount].image"
-            priority
             width="1400"
             height="800"
             alt=""
@@ -622,7 +614,6 @@
 
     <img
       class="mt-5 2xl:w-full"
-      priority
       width="1265"
       height="685"
       ngSrc="../assets/images/partners.png"
@@ -659,7 +650,6 @@
         width="1502"
         height="1714"
         ngSrc="../assets/images/frame2.png"
-        priority
         alt=""
       />
     </div>
