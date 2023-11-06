@@ -15,13 +15,17 @@
 
   <section class="flex flex-col justify-start gap-1 p-3">
     <div class="text-center">
-      <span class="text-xl font-black"> REFERÊNCIA EM ENTRETENIMENTO </span>
+      <span class="text-xl font-black sm:text-2xl lg:text-3xl xl:text-4xl">
+        REFERÊNCIA EM ENTRETENIMENTO
+      </span>
     </div>
 
     <!-- PRESENTATION -->
 
-    <div class="text-center">
-      <span class="text-base text-justify font-light">
+    <div class="text-center xl:px-20 2xl:px-64">
+      <span
+        class="text-base text-justify font-light sm:text-lg lg:text-xl xl:text-2xl"
+      >
         O <span class="font-black">Canal Maneirando</span>, apresentado pela
         dupla Neto Lyra e Guilherme Yuri, é um dos maiores canais de
         curtas-metragens e esquetes de comédia em seu segmento no mundo.
@@ -106,8 +110,10 @@
     </div>
     <!-- TEXT 1  -->
 
-    <div class="flex flex-col gap-2 justify-center">
-      <span class="text-base font-light text-center">
+    <div class="flex flex-col gap-2 justify-center 2xl:px-64">
+      <span
+        class="text-base font-light text-center sm:text-lg lg:text-xl xl:text-2xl"
+      >
         Além do canal principal com
         <span class="underline font-bold">7.6 milhões</span> de inscritos, a
         dupla conta hoje com dois canais dedicados exclusivamente a Shorts na
@@ -120,7 +126,9 @@
 
       <!-- TEXT 2  -->
 
-      <span class="text-base font-light text-center">
+      <span
+        class="text-base font-light text-center sm:text-lg lg:text-xl xl:text-2xl"
+      >
         O recente projeto <span class="font-bold">Maneirando TV</span> conta com
         cerca de <span class="underline">200 mil inscritos</span> e uma média
         mensal de <span class="underline">3 milhões inscritos</span>, além de
@@ -137,7 +145,8 @@
 
     <div class="lg:flex lg:justify-center">
       <div class="flex flex-col">
-        <span class="text-xl font-black uppercase flex justify-center"
+        <span
+          class="text-xl font-black uppercase flex justify-center sm:text-2xl lg:text-3xl xl:text-4xl"
           >maneirando em números
         </span>
       </div>
@@ -274,11 +283,11 @@
   <!-- WAVE -->
 
   <!-- YOUTUBE CAROUSEL -->
-  <div class="youtube-carousel">
+  <div class="youtube-carousel xl:px-64">
     <div class="carousel flex flex-row justify-between">
       <img
         (click)="previousYoutubeSlide()"
-        class="mx-1 animate-pulse"
+        class="mx-1 animate-pulse sm:w-14"
         ngSrc="../assets/icons/leftArrow.svg"
         width="30"
         height="30"
@@ -294,7 +303,7 @@
       />
       <img
         (click)="nextYoutubeSlide()"
-        class="mx-1 animate-pulse"
+        class="mx-1 animate-pulse sm:w-14"
         ngSrc="../assets/icons/rightArrow.svg"
         width="30"
         height="30"
@@ -318,22 +327,26 @@
 
   <div class="bg-yellow-400 px-3">
     <!-- SCHOOLS -->
-    <div class="school-slider relative">
-      <span class="text-xl font-black uppercase flex justify-center">
+    <div class="school-slider relative 2xl:px-64">
+      <span
+        class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black uppercase flex justify-center"
+      >
         conectado com o público
       </span>
       <div class="flex flex-row justify-around mt-2">
         <!-- CONTROLLER -->
         <img
           (click)="previousSchoolSlide()"
-          class="mx-1 animate-pulse"
+          class="mx-1 animate-pulse sm:w-14"
           ngSrc="../assets/icons/leftArrow.svg"
           width="36"
           height="36"
           alt="previous slide"
         />
 
-        <div class="custom-slider flex flex-row justify-between">
+        <div
+          class="custom-slider flex flex-row justify-between lg:justify-center"
+        >
           <!-- FIRST CASE -->
           <img
             class="w-1/6 object-scale-down opacity-50"
@@ -356,7 +369,7 @@
 
           <!-- CENTER -->
           <img
-            class="w-3/5 object-scale-down"
+            class="w-3/5 object-scale-down lg:w-5/12"
             [ngSrc]="schoolSlider[schoolCount]"
             priority=""
             width="560"
@@ -388,7 +401,7 @@
         <!-- CONTROLLER -->
         <img
           (click)="nextSchoolSlide()"
-          class="mx-1 animate-pulse"
+          class="mx-1 animate-pulse sm:w-14"
           ngSrc="../assets/icons/rightArrow.svg"
           width="36"
           height="36"
@@ -399,11 +412,13 @@
 
     <!-- INTERVIEWS -->
 
-    <div class="interview-slider bg-opacity-40 mt-10">
-      <span class="text-base font-black uppercase flex justify-center">
+    <div class="interview-slider bg-opacity-40 mt-10 2xl:px-64">
+      <span
+        class="text-base sm:text-lg lg:text-xl xl:text-2xl font-black uppercase flex justify-center"
+      >
         relevância dentro e fora da internet
       </span>
-      <div class="flex flex-col">
+      <div class="flex flex-col lg:px-10">
         <div class="flex flex-row justify-evenly gap-1 mt-2">
           <div class="w-1/3" *ngFor="let interview of interviews" class="">
             <img
@@ -430,14 +445,16 @@
 
     <!-- INFLUENCERS -->
 
-    <div class="influencer-slider mt-10">
-      <span class="text-base font-black uppercase flex justify-center">
+    <div class="influencer-slider mt-10 2xl:px-64">
+      <span
+        class="text-base sm:text-lg lg:text-xl xl:text-2xl font-black uppercase flex justify-center"
+      >
         influência no cenário
       </span>
       <div class="flex flex-row">
         <img
           (click)="previousInfluencerSlide()"
-          class="mx-1 animate-pulse"
+          class="mx-1 animate-pulse sm:w-14"
           ngSrc="../assets/icons/leftArrow.svg"
           width="36"
           height="36"
@@ -456,11 +473,13 @@
               height="16"
               alt=""
             />
-            <span class="text-xs font-bold uppercase">{{
-              influencers[influencerCount].name
-            }}</span>
+            <span
+              class="text-xs sm:text-sm lg:text-base xl:text-lg font-bold uppercase"
+              >{{ influencers[influencerCount].name }}</span
+            >
           </a>
           <img
+            class="lg:px-10 xl:px-28"
             [ngSrc]="influencers[influencerCount].image"
             priority
             width="1400"
@@ -470,7 +489,7 @@
         </div>
         <img
           (click)="nextInfluencerSlide()"
-          class="mx-1 animate-pulse"
+          class="mx-1 animate-pulse sm:w-14"
           ngSrc="../assets/icons/rightArrow.svg"
           width="36"
           height="36"
@@ -487,7 +506,9 @@
 
   <div class="p-3 lg:p-8">
     <div class="lg:text-center">
-      <span class="text-xl font-black uppercase flex justify-center">
+      <span
+        class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black uppercase flex justify-center"
+      >
         AUDIÊNCIA</span
       >
     </div>
@@ -495,11 +516,15 @@
     <!-- GENDER -->
     <div class="flex flex-col mt-2">
       <div class="text-center">
-        <span class="uppercase text-lg font-bold">sexo</span>
+        <span
+          class="uppercase text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold"
+          >sexo</span
+        >
       </div>
       <div class="flex flex-row sm:justify-evenly justify-between p-3">
         <div class="flex flex-col">
-          <span class="uppercase flex justify-center text-base font-bold"
+          <span
+            class="uppercase flex justify-center text-base font-bold xl:text-lg"
             >masculino</span
           >
           <div class="flex justify-center">
@@ -511,10 +536,13 @@
               alt="male gender"
             />
           </div>
-          <span class="flex justify-center text-lg font-black">54.7%</span>
+          <span class="flex justify-center text-lg font-black xl:text-xl"
+            >54.7%</span
+          >
         </div>
         <div class="flex flex-col">
-          <span class="uppercase flex justify-center text-base font-bold"
+          <span
+            class="uppercase flex justify-center text-base font-bold xl:text-lg"
             >feminino</span
           >
           <div class="flex justify-center">
@@ -526,7 +554,9 @@
               alt="male gender"
             />
           </div>
-          <span class="flex justify-center text-lg font-black">45.1%</span>
+          <span class="flex justify-center text-lg font-black xl:text-xl"
+            >45.1%</span
+          >
         </div>
       </div>
     </div>
@@ -534,7 +564,10 @@
     <!-- AGE RANGE -->
 
     <div class="text-center">
-      <span class="uppercase text-lg font-bold">FAIXA ETÁRIA</span>
+      <span
+        class="uppercase text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold"
+        >FAIXA ETÁRIA</span
+      >
     </div>
     <div class="flex flex-row mt-2 justify-evenly items-center">
       <img
@@ -581,8 +614,9 @@
 
   <!-- MEDIA SOLUTION -->
 
-  <div class="p-3 lg:p-8 text-center">
-    <span class="text-3xl font-black uppercase 2xl:text-5xl"
+  <div class="p-3 lg:p-8 text-center 2xl:px-64">
+    <span
+      class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black uppercase 2xl:text-5xl"
       >casos de sucesso</span
     >
 
@@ -598,13 +632,16 @@
 
   <img src="../assets/waves/wave2.svg" alt="" />
 
-  <div class="p-3 bg-yellow-400 lg:p-8 text-center">
+  <div class="p-3 bg-yellow-400 lg:p-8 text-center 2xl:px-64">
     <div class="flex flex-col">
-      <span class="text-3xl font-black uppercase 2xl:text-5xl"
+      <span
+        class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black uppercase"
         >entre em contato</span
       >
       <div class="flex justify-center">
-        <span class="text-lg text-center font-light mt-2 lg:w-1/2 2xl:text-xl">
+        <span
+          class="text-base sm:text-lg lg:text-xl xl:text-2xl text-center font-light mt-2"
+        >
           O <span class="font-bold">Canal Maneirando</span> possui grande
           variedade de clientes ao longo dos anos, assim possui um time
           especializado em entregar as melhores estratégias para os anunciantes
@@ -615,7 +652,7 @@
   </div>
 
   <!-- CONTACT -->
-  <div class="p-3 bg-yellow-400 lg:p-8 text-center">
+  <div class="p-3 bg-yellow-400 lg:p-8 text-center 2xl:px-64">
     <div class="flex justify-center">
       <img
         class="w-80 lg:w-96"
