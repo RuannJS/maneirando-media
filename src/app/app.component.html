@@ -13,16 +13,15 @@
 
   <!-- ABOUT  -->
 
-  <section class="flex flex-col justify-start gap-1 p-3 lg:p-8">
-    <div class="lg:text-center">
-      <span class="text-3xl font-black lg:text-4xl 2xl:text-5xl">
-        REFERÊNCIA EM ENTRETENIMENTO
-      </span>
+  <section class="flex flex-col justify-start gap-1 p-3">
+    <div class="text-center">
+      <span class="text-xl font-black"> REFERÊNCIA EM ENTRETENIMENTO </span>
     </div>
+
     <!-- PRESENTATION -->
 
-    <div class="lg:text-center lg:px-20 2xl:px-52">
-      <span class="text-lg text-justify font-light lg:text-xl">
+    <div class="text-center">
+      <span class="text-base text-justify font-light">
         O <span class="font-black">Canal Maneirando</span>, apresentado pela
         dupla Neto Lyra e Guilherme Yuri, é um dos maiores canais de
         curtas-metragens e esquetes de comédia em seu segmento no mundo.
@@ -107,10 +106,8 @@
     </div>
     <!-- TEXT 1  -->
 
-    <div class="flex flex-col gap-1 lg:flex-row lg:justify-around">
-      <span
-        class="text-lg font-light text-justify lg:text-xl lg:pe-32 lg:ml-10 2xl:text-2xl"
-      >
+    <div class="flex flex-col gap-2 justify-center">
+      <span class="text-base font-light text-center">
         Além do canal principal com
         <span class="underline font-bold">7.6 milhões</span> de inscritos, a
         dupla conta hoje com dois canais dedicados exclusivamente a Shorts na
@@ -123,9 +120,7 @@
 
       <!-- TEXT 2  -->
 
-      <span
-        class="text-lg font-light text-justify lg:text-xl lg:pe-24 2xl:text-2xl"
-      >
+      <span class="text-base font-light text-center">
         O recente projeto <span class="font-bold">Maneirando TV</span> conta com
         cerca de <span class="underline">200 mil inscritos</span> e uma média
         mensal de <span class="underline">3 milhões inscritos</span>, além de
@@ -137,13 +132,12 @@
 
   <!-- CHANNEL NUMBERS -->
 
-  <div class="flex flex-col px-3 lg:px-8 half-yellow lg:mt-5">
+  <div class="flex flex-col px-3 half-yellow">
     <!-- INTRODUCTION -->
 
-    <div class="lg:flex lg:justify-center lg:mb-4">
+    <div class="lg:flex lg:justify-center">
       <div class="flex flex-col">
-        <span
-          class="text-3xl font-black uppercase flex justify-start lg:text-4xl 2xl:text-5xl"
+        <span class="text-xl font-black uppercase flex justify-center"
           >maneirando em números
         </span>
       </div>
@@ -281,14 +275,30 @@
 
   <!-- YOUTUBE CAROUSEL -->
   <div class="youtube-carousel">
-    <div class="carousel flex justify-center">
+    <div class="carousel flex flex-row justify-between">
       <img
-        class="px-5 lg:px-20 xl:px-10 2xl:p-0"
+        (click)="previousYoutubeSlide()"
+        class="mx-1 animate-pulse"
+        ngSrc="../assets/icons/leftArrow.svg"
+        width="30"
+        height="30"
+        alt="previous slide"
+      />
+      <img
+        class="w-4/5"
         [ngSrc]="youtubeSlider[youtubeCount]"
         width="700"
         height="466"
         priority
         alt=""
+      />
+      <img
+        (click)="nextYoutubeSlide()"
+        class="mx-1 animate-pulse"
+        ngSrc="../assets/icons/rightArrow.svg"
+        width="30"
+        height="30"
+        alt="next slide"
       />
     </div>
   </div>
@@ -309,38 +319,110 @@
   <div class="bg-yellow-400 px-3">
     <!-- SCHOOLS -->
     <div class="school-slider relative">
-      <span
-        class="text-3xl font-black xl:flex xl:justify-center lg:text-4xl 2xl:text-5xl uppercase"
-      >
+      <span class="text-xl font-black uppercase flex justify-center">
         conectado com o público
       </span>
-      <div class="flex flex-row gap-x-2 justify-center mt-2 sm:gap-x-10">
+      <div class="flex flex-row justify-around mt-2">
+        <!-- CONTROLLER -->
         <img
-          class="w-4/5 object-scale-down rounded-md shadow-lg sm:w-1/2 lg:w-72"
-          [ngSrc]="schoolSlider[schoolCount]"
-          priority=""
-          width="560"
-          height="1040"
-          alt=""
+          (click)="previousSchoolSlide()"
+          class="mx-1 animate-pulse"
+          ngSrc="../assets/icons/leftArrow.svg"
+          width="36"
+          height="36"
+          alt="previous slide"
+        />
+
+        <div class="custom-slider flex flex-row justify-between">
+          <!-- FIRST CASE -->
+          <img
+            class="w-1/6 object-scale-down opacity-50"
+            *ngIf="0 >= schoolCount"
+            [ngSrc]="schoolSlider[schoolSlider.length - 1]"
+            width="560"
+            height="1040"
+            alt=""
+          />
+
+          <img
+            class="w-1/6 object-scale-down opacity-50"
+            *ngIf="schoolCount > 0"
+            [ngSrc]="schoolSlider[schoolCount - 1]"
+            priority=""
+            width="560"
+            height="1040"
+            alt=""
+          />
+
+          <!-- CENTER -->
+          <img
+            class="w-3/5 object-scale-down"
+            [ngSrc]="schoolSlider[schoolCount]"
+            priority=""
+            width="560"
+            height="1040"
+            alt=""
+          />
+
+          <img
+            class="w-1/6 object-scale-down opacity-50"
+            [ngSrc]="schoolSlider[schoolCount + 1]"
+            *ngIf="schoolSlider.length - 1 > schoolCount"
+            priority=""
+            width="560"
+            height="1040"
+            alt=""
+          />
+
+          <!-- LAST CASE -->
+          <img
+            class="w-1/6 object-scale-down opacity-50"
+            *ngIf="schoolCount >= schoolSlider.length - 1"
+            [ngSrc]="schoolSlider[0]"
+            priority=""
+            width="560"
+            height="1040"
+            alt=""
+          />
+        </div>
+        <!-- CONTROLLER -->
+        <img
+          (click)="nextSchoolSlide()"
+          class="mx-1 animate-pulse"
+          ngSrc="../assets/icons/rightArrow.svg"
+          width="36"
+          height="36"
+          alt="next slide"
         />
       </div>
     </div>
 
     <!-- INTERVIEWS -->
 
-    <div class="interview-slider mt-10">
-      <span
-        class="text-3xl font-black lg:text-4xl xl:flex xl:justify-center 2xl:text-5xl uppercase"
-      >
-        relevancia dentro e fora da internet
+    <div class="interview-slider bg-opacity-40 mt-10">
+      <span class="text-base font-black uppercase flex justify-center">
+        relevância dentro e fora da internet
       </span>
-      <div class="flex justify-center mt-2">
+      <div class="flex flex-col">
+        <div class="flex flex-row justify-evenly gap-1 mt-2">
+          <div class="w-1/3" *ngFor="let interview of interviews" class="">
+            <img
+              class="border-2 border-black rounded-md opacity-80 cursor-pointer"
+              [ngSrc]="interview.image"
+              *ngIf="interview.id !== activeInterview"
+              width="1920"
+              height="1080"
+              (click)="activeSlide(interview.id)"
+              alt=""
+            />
+          </div>
+        </div>
+        <!-- ACTIVE -->
         <img
-          class="object-scale-down rounded-md shadow-lg md:w-1/2"
-          [ngSrc]="interviewSlider[interviewCount]"
-          width="732"
-          height="412"
-          priority
+          class="mt-2 rounded-md shadow-lg"
+          [ngSrc]="interviews[activeInterview].image"
+          width="1920"
+          height="1080"
           alt=""
         />
       </div>
@@ -349,19 +431,50 @@
     <!-- INFLUENCERS -->
 
     <div class="influencer-slider mt-10">
-      <span
-        class="text-3xl font-black lg:text-4xl xl:flex xl:justify-center 2xl:text-5xl uppercase"
-      >
+      <span class="text-base font-black uppercase flex justify-center">
         influência no cenário
       </span>
-      <div class="flex justify-center mt-2">
+      <div class="flex flex-row">
         <img
-          class="w-full rounded-md shadow-lg md:w-1/2"
-          [ngSrc]="influencers[influencerCount].image"
-          priority
-          width="732"
-          height="412"
-          alt=""
+          (click)="previousInfluencerSlide()"
+          class="mx-1 animate-pulse"
+          ngSrc="../assets/icons/leftArrow.svg"
+          width="36"
+          height="36"
+          alt="previous slide"
+        />
+        <div class="flex flex-col justify-center mt-2">
+          <a
+            target="_blank"
+            [href]="influencers[influencerCount].link"
+            class="flex flex-row justify-center gap-2"
+          >
+            <img
+              class="animate-pulse"
+              ngSrc="../assets/icons/info.svg"
+              width="16"
+              height="16"
+              alt=""
+            />
+            <span class="text-xs font-bold uppercase">{{
+              influencers[influencerCount].name
+            }}</span>
+          </a>
+          <img
+            [ngSrc]="influencers[influencerCount].image"
+            priority
+            width="1400"
+            height="800"
+            alt=""
+          />
+        </div>
+        <img
+          (click)="nextInfluencerSlide()"
+          class="mx-1 animate-pulse"
+          ngSrc="../assets/icons/rightArrow.svg"
+          width="36"
+          height="36"
+          alt="next slide"
         />
       </div>
     </div>
@@ -374,19 +487,19 @@
 
   <div class="p-3 lg:p-8">
     <div class="lg:text-center">
-      <span class="text-3xl font-black lg:text-4xl 2xl:text-5xl">
+      <span class="text-xl font-black uppercase flex justify-center">
         AUDIÊNCIA</span
       >
     </div>
 
     <!-- GENDER -->
     <div class="flex flex-col mt-2">
-      <div class="lg:text-center">
-        <span class="uppercase text-xl font-bold lg:text-3xl">sexo</span>
+      <div class="text-center">
+        <span class="uppercase text-lg font-bold">sexo</span>
       </div>
       <div class="flex flex-row sm:justify-evenly justify-between p-3">
         <div class="flex flex-col">
-          <span class="uppercase flex justify-center text-lg font-bold"
+          <span class="uppercase flex justify-center text-base font-bold"
             >masculino</span
           >
           <div class="flex justify-center">
@@ -401,7 +514,7 @@
           <span class="flex justify-center text-lg font-black">54.7%</span>
         </div>
         <div class="flex flex-col">
-          <span class="uppercase flex justify-center text-lg font-bold"
+          <span class="uppercase flex justify-center text-base font-bold"
             >feminino</span
           >
           <div class="flex justify-center">
@@ -420,8 +533,8 @@
 
     <!-- AGE RANGE -->
 
-    <div class="lg:text-center">
-      <span class="uppercase text-xl font-bold lg:text-3xl">FAIXA ETÁRIA</span>
+    <div class="text-center">
+      <span class="uppercase text-lg font-bold">FAIXA ETÁRIA</span>
     </div>
     <div class="flex flex-row mt-2 justify-evenly items-center">
       <img
@@ -468,7 +581,7 @@
 
   <!-- MEDIA SOLUTION -->
 
-  <div class="p-3 lg:p-8 lg:text-center">
+  <div class="p-3 lg:p-8 text-center">
     <span class="text-3xl font-black uppercase 2xl:text-5xl"
       >casos de sucesso</span
     >
@@ -485,13 +598,13 @@
 
   <img src="../assets/waves/wave2.svg" alt="" />
 
-  <div class="p-3 bg-yellow-400 lg:p-8 lg:text-center">
+  <div class="p-3 bg-yellow-400 lg:p-8 text-center">
     <div class="flex flex-col">
       <span class="text-3xl font-black uppercase 2xl:text-5xl"
         >entre em contato</span
       >
       <div class="flex justify-center">
-        <span class="text-lg text-justify font-light mt-2 lg:w-1/2 2xl:text-xl">
+        <span class="text-lg text-center font-light mt-2 lg:w-1/2 2xl:text-xl">
           O <span class="font-bold">Canal Maneirando</span> possui grande
           variedade de clientes ao longo dos anos, assim possui um time
           especializado em entregar as melhores estratégias para os anunciantes
