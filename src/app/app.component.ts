@@ -77,32 +77,6 @@ export class AppComponent implements OnInit {
     }
   }
 
-  // youtube slider
-
-  youtubeSlider: string[] = [
-    '../assets/youtubeSlider/biggest.png',
-    '../assets/youtubeSlider/monthly.png',
-    '../assets/youtubeSlider/views.png',
-  ];
-
-  youtubeCount: number = 0;
-
-  nextYoutubeSlide() {
-    this.youtubeCount++;
-
-    if (this.youtubeCount >= this.youtubeSlider.length) {
-      this.youtubeCount = 0;
-    }
-  }
-
-  previousYoutubeSlide() {
-    this.youtubeCount--;
-
-    if (this.youtubeCount < 0) {
-      this.youtubeCount = this.youtubeSlider.length - 1;
-    }
-  }
-
   // school slider
 
   schoolSlider: string[] = [
@@ -138,6 +112,7 @@ export class AppComponent implements OnInit {
     { id: 1, image: '../assets/images/interviews/interview2.png' },
     { id: 2, image: '../assets/images/interviews/interview3.jpg' },
     { id: 3, image: '../assets/images/interviews/interview4.png' },
+    { id: 4, image: '../assets/images/interviews/interview5.png' },
   ];
 
   activeInterview: number = 0;
