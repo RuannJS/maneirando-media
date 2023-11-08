@@ -1,5 +1,5 @@
 export interface Influencer {
-  name: string;
+  name: string[];
   image: string;
-  link: string;
+  link: string[];
 }

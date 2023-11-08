@@ -48,15 +48,13 @@ export class AppComponent implements OnInit {
 
   // sliders
 
-  swapInterval: number = 7500;
-
   // MAIN
   slider: string[] = [
+    '../assets/slider/zodiaco.png',
     '../assets/slider/aranha.png',
     '../assets/slider/chave.png',
     '../assets/slider/lacasa.png',
     '../assets/slider/naruto.png',
-    '../assets/slider/zodiaco.png',
   ];
 
   sliderCount: number = 0;
@@ -80,8 +78,8 @@ export class AppComponent implements OnInit {
   // school slider
 
   schoolSlider: string[] = [
-    '../assets/images/school/school1.png',
     '../assets/images/school/school2.png',
+    '../assets/images/school/school1.png',
     '../assets/images/school/school3.png',
     '../assets/images/school/school4.png',
     '../assets/images/school/school5.png',
@@ -108,10 +106,10 @@ export class AppComponent implements OnInit {
   // interview slider
 
   interviews: Interview[] = [
-    { id: 0, image: '../assets/images/interviews/interview1.png' },
-    { id: 1, image: '../assets/images/interviews/interview2.png' },
-    { id: 2, image: '../assets/images/interviews/interview3.jpg' },
-    { id: 3, image: '../assets/images/interviews/interview4.png' },
+    { id: 0, image: '../assets/images/interviews/interview4.png' },
+    { id: 1, image: '../assets/images/interviews/interview1.png' },
+    { id: 2, image: '../assets/images/interviews/interview2.png' },
+    { id: 3, image: '../assets/images/interviews/interview3.jpg' },
     { id: 4, image: '../assets/images/interviews/interview5.png' },
   ];
 
@@ -125,109 +123,142 @@ export class AppComponent implements OnInit {
 
   influencers: Influencer[] = [
     {
-      name: 'athos',
+      name: ['athos'],
       image: '../assets/images/influencers/athos.png',
-      link: 'https://www.youtube.com/@Athosgamer',
+      link: ['https://www.youtube.com/@Athosgamer'],
     },
     {
-      name: 'biel valadares e lucas guedes',
+      name: ['biel valadares', 'lucas guedes'],
       image: '../assets/images/influencers/valadares.png',
-      link: 'https://www.youtube.com/@BielValadares',
+      link: [
+        'https://www.youtube.com/@BielValadares',
+        'https://www.youtube.com/@LucasGuedess',
+      ],
     },
     {
-      name: 'bruno vlogs e henrique Nemes',
+      name: ['bruno vlogs', 'henrique nemes'],
       image: '../assets/images/influencers/bruno&henrique.png',
-      link: 'https://www.youtube.com/@HenriqueNemes',
+      link: [
+        'https://www.youtube.com/@BrunoVlogs1',
+        'https://www.youtube.com/@HenriqueNemes',
+      ],
     },
     {
-      name: 'chapoh e duduzito',
+      name: ['chapoh', 'duduzito'],
       image: '../assets/images/influencers/chapo&duduzito.png',
-      link: 'https://www.youtube.com/@duduzito_sz',
+      link: [
+        'https://www.youtube.com/@CHAPOH11',
+        'https://www.youtube.com/@duduzito_sz',
+      ],
     },
     {
-      name: 'coelho e bru',
+      name: ['coelho', 'bru'],
       image: '../assets/images/influencers/coelho&bru.png',
-      link: 'https://www.youtube.com/@mateiformiga',
+      link: [
+        'https://www.youtube.com/@mateiformiga',
+        'https://www.youtube.com/channel/UC91s1GGl6347-t10suZ0i4A',
+      ],
     },
     {
-      name: 'dando trela e jhonny',
+      name: ['dando trela', 'jhonny'],
       image: '../assets/images/influencers/trela&jhony.png',
-      link: 'https://www.youtube.com/@MeunomeeJohnny',
+      link: [
+        'https://www.youtube.com/@DandoTrela',
+        'https://www.youtube.com/@MeunomeeJohnny',
+      ],
     },
     {
-      name: 'ei nerd e a gente faz agora',
+      name: ['ei nerd', 'a gente faz agora'],
       image: '../assets/images/influencers/nerd&agora.png',
-      link: 'https://www.youtube.com/@einerdtv',
+      link: [
+        'https://www.youtube.com/@einerdtv',
+        'https://www.youtube.com/@AGenteFazAgora',
+      ],
     },
     {
-      name: 'família arqueira',
+      name: ['família arqueira'],
       image: '../assets/images/influencers/familiaarqueira.png',
-      link: 'https://www.youtube.com/@FamiliaArqueira',
+      link: ['https://www.youtube.com/@FamiliaArqueira'],
     },
     {
-      name: 'irmãos lemos',
+      name: ['irmãos lemos'],
       image: '../assets/images/influencers/irmaoslemos.png',
-      link: 'https://www.youtube.com/@IrmaosLemos',
+      link: ['https://www.youtube.com/@IrmaosLemos'],
     },
     {
-      name: 'lucrazy e retarda marques',
+      name: ['lucrazy', 'retarda marques'],
       image: '../assets/images/influencers/lucrazy&retarda.png',
-      link: 'https://www.youtube.com/@LuCr4zy7',
+      link: [
+        'https://www.youtube.com/@LuCr4zy7',
+        'https://www.youtube.com/@retardamarques',
+      ],
     },
     {
-      name: 'mamute congelado',
+      name: ['mamute congelado'],
       image: '../assets/images/influencers/mamutecongelado.png',
-      link: 'https://www.youtube.com/@MamuteCongelado',
+      link: ['https://www.youtube.com/@MamuteCongelado'],
     },
     {
-      name: 'manolo e sergio cantú',
+      name: ['manolo', 'sergio cantú'],
       image: '../assets/images/influencers/manolo&cantu.png',
-      link: 'https://www.instagram.com/manoloreyoficial/?hl=pt-br',
+      link: [
+        'https://www.instagram.com/manoloreyoficial',
+        'https://www.instagram.com/sergio_cantu/',
+      ],
     },
     {
-      name: 'mundo geek',
+      name: ['mundo geek'],
       image: '../assets/images/influencers/mundogeek.png',
-      link: 'https://www.youtube.com/@MundoGeekReal',
+      link: ['https://www.youtube.com/@MundoGeekReal'],
     },
     {
-      name: 'natan por aí',
+      name: ['natan por aí'],
       image: '../assets/images/influencers/natan.png',
-      link: 'https://www.youtube.com/@NatanporAi',
+      link: ['https://www.youtube.com/@NatanporAi'],
     },
     {
-      name: 'noylan e mellu',
+      name: ['noylan', 'mellu'],
       image: '../assets/images/influencers/noylan&mellu.png',
-      link: 'https://www.youtube.com/@noylan',
+      link: [
+        'https://www.youtube.com/@noylan',
+        'https://www.youtube.com/@MelluBlox',
+      ],
     },
     {
-      name: 'o que não dizer',
+      name: ['o que não dizer'],
       image: '../assets/images/influencers/naodizer.png',
-      link: 'https://www.youtube.com/@OQueNaoDizerOficial',
+      link: ['https://www.youtube.com/@OQueNaoDizerOficial'],
     },
     {
-      name: 'raphael rossato e helena palomanes',
+      name: ['raphael rossato', 'luisa palomanes'],
       image: '../assets/images/influencers/raphael&helena.png',
-      link: 'https://www.youtube.com/@RaphaelRossattodub',
+      link: [
+        'https://www.youtube.com/@RaphaelRossattodub',
+        'https://www.instagram.com/luisapalomanes/',
+      ],
     },
     {
-      name: 'robin hood gamer',
+      name: ['robin hood gamer'],
       image: '../assets/images/influencers/robinhood.png',
-      link: 'https://www.youtube.com/@RobinHoodGamer1',
+      link: ['https://www.youtube.com/@RobinHoodGamer1'],
     },
     {
-      name: 'voice makers',
+      name: ['voice makers'],
       image: '../assets/images/influencers/voicemakers.png',
-      link: 'https://www.youtube.com/@VoiceMakers',
+      link: ['https://www.youtube.com/@VoiceMakers'],
     },
     {
-      name: 'wiris',
+      name: ['wiris'],
       image: '../assets/images/influencers/wiris.png',
-      link: 'https://www.youtube.com/@WirisVianaofc',
+      link: ['https://www.youtube.com/@WirisVianaofc'],
     },
     {
-      name: 'wirley contaifer e cadu paschoal',
+      name: ['wirley contaifer', 'cadu paschoal'],
       image: '../assets/images/influencers/wirley&cadu.png',
-      link: 'https://www.youtube.com/@wirley.contaifer',
+      link: [
+        'https://www.youtube.com/@wirley.contaifer',
+        'https://www.instagram.com/cadupaschoal/',
+      ],
     },
   ];
 
