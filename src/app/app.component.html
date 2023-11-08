@@ -15,7 +15,9 @@
 
   <section class="flex flex-col justify-start gap-1 p-3">
     <div class="text-center">
-      <span class="text-xl font-black sm:text-2xl lg:text-3xl xl:text-4xl">
+      <span
+        class="text-xl font-black sm:text-2xl lg:text-4xl xl:text-4xl 2xl:text-6xl"
+      >
         REFERÊNCIA EM ENTRETENIMENTO
       </span>
     </div>
@@ -146,7 +148,7 @@
     <div class="lg:flex lg:justify-center">
       <div class="flex flex-col">
         <span
-          class="text-2xl font-black uppercase flex justify-center sm:text-2xl lg:text-3xl xl:text-4xl"
+          class="text-2xl font-black uppercase flex justify-center sm:text-2xl lg:text-4xl xl:text-4xl 2xl:text-6xl"
           >maneirando em números
         </span>
       </div>
@@ -275,19 +277,93 @@
 
       <!-- SOCIAL MEDIA LINKS -->
 
-      <div class="flex flex-row justify-between items-center lg:justify-evenly">
-        <a target="_blank" *ngFor="let media of mediaLinks" [href]="media.link">
+      <div
+        class="flex flex-row justify-between px-3 mt-10 md:justify-center md:gap-10 xl:gap-20"
+      >
+        <!-- YOUTUBE -->
+        <div class="flex flex-col gap-1">
+          <a
+            *ngFor="let youtube of youtubeLinks"
+            [href]="youtube.link"
+            class="flex flex-row gap-1 items-center hover:underline"
+          >
+            <img width="36" height="36" [ngSrc]="youtube.icon" alt="" />
+            <span class="text-base xl:text-2xl font-semibold">{{
+              youtube.name
+            }}</span>
+          </a>
+        </div>
+        <!-- SHORTS -->
+        <div class="flex flex-col gap-1">
+          <a
+            *ngFor="let shorts of shortsLinks"
+            [href]="shorts.link"
+            class="flex flex-row gap-1 items-center hover:underline"
+          >
+            <img width="36" height="36" [ngSrc]="shorts.icon" alt="" />
+            <span class="text-base xl:text-2xl font-semibold">{{
+              shorts.name
+            }}</span>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-row justify-between md:justify-center md:gap-10 xl:gap-20 px-3"
+      >
+        <!-- instagram -->
+        <div class="flex flex-col gap-1">
+          <a
+            *ngFor="let instagram of instagramLinks"
+            [href]="instagram.link"
+            class="flex flex-row gap-1 items-center hover:underline xl:ml-4"
+          >
+            <img width="36" height="36" [ngSrc]="instagram.icon" alt="" />
+            <span class="text-base xl:text-2xl font-semibold">{{
+              instagram.name
+            }}</span>
+          </a>
+        </div>
+        <!-- tiktok -->
+        <div class="flex flex-col gap-1">
+          <a
+            *ngFor="let tiktok of tiktokLinks"
+            [href]="tiktok.link"
+            class="flex flex-row gap-1 mr-8 xl:mr-16 items-center hover:underline"
+          >
+            <img width="36" height="36" [ngSrc]="tiktok.icon" alt="" />
+            <span class="text-base xl:text-2xl font-semibold">{{
+              tiktok.name
+            }}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- others -->
+      <div
+        class="flex flex-row justify-around md:justify-center md:gap-10 xl:gap-20 px-3"
+      >
+        <a
+          *ngFor="let media of mediaLinks"
+          [href]="media.link"
+          class="flex flex-row gap-1 items-center hover:underline"
+        >
           <img
-            class="w-9 lg:w-16"
-            width="72"
-            height="72"
             [ngSrc]="media.icon"
-            [alt]="media.name"
+            width="36"
+            height="36"
+            [alt]="[media.name]"
           />
+          <span class="text-base xl:text-2xl font-semibold">{{
+            media.name
+          }}</span>
         </a>
       </div>
     </div>
   </div>
+
+  <!-- WAVE -->
+
   <img
     width="300"
     height="67"
@@ -295,8 +371,6 @@
     ngSrc="../assets/waves/wave.svg"
     alt=""
   />
-
-  <!-- WAVE -->
 
   <!-- YOUTUBE CAROUSEL -->
   <div class="youtube-carousel flex justify-center md:px-16 lg:px-32">
@@ -319,7 +393,7 @@
     <!-- SCHOOLS -->
     <div class="school-slider relative 2xl:px-64">
       <span
-        class="text-2xl xl:text-4xl 2xl:text-6xl font-black uppercase flex justify-center"
+        class="text-2xl lg:text-4xl 2xl:text-6xl font-black uppercase flex justify-center"
       >
         conectado com o público
       </span>
@@ -401,7 +475,7 @@
 
     <div class="interview-slider bg-opacity-40 mt-10 2xl:px-64">
       <span
-        class="text-lg lg:text-2xl xl:text-4xl 2xl:text-6xl font-black uppercase flex justify-center"
+        class="text-lg sm:text-2xl lg:text-4xl 2xl:text-6xl font-black uppercase flex justify-center"
       >
         relevância dentro e fora da internet
       </span>
@@ -434,7 +508,7 @@
 
     <div class="influencer-slider mt-10 2xl:px-64">
       <span
-        class="text-2xl xl:text-4xl 2xl:text-6xl font-black uppercase flex justify-center"
+        class="text-2xl lg:text-4xl 2xl:text-6xl font-black uppercase flex justify-center"
       >
         influência no cenário
       </span>
@@ -460,7 +534,7 @@
             <a
               target="_blank"
               [href]="influencers[influencerCount].link[0]"
-              class="flex flex-row gap-2"
+              class="flex flex-row gap-2 hover:underline"
             >
               <span
                 class="text-xs sm:text-sm lg:text-base xl:text-lg font-bold uppercase"
@@ -478,7 +552,7 @@
               *ngIf="influencers[influencerCount].name[1]"
               target="_blank"
               [href]="influencers[influencerCount].link[1]"
-              class="flex flex-row gap-2"
+              class="flex flex-row gap-2 hover:underline"
             >
               <span
                 class="text-xs sm:text-sm lg:text-base xl:text-lg font-bold uppercase"

@@ -8,26 +8,83 @@ import { Interview } from './models/interview';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  mediaLinks: SocialMedia[] = [
+  youtubeLinks: SocialMedia[] = [
     {
-      name: 'Youtube',
-      link: 'https://www.youtube.com/@Maneirando',
+      name: 'Maneirando',
+      link: 'https://www.youtube.com/@Maneirando/featured',
       icon: '../assets/mediaIcons/youtube.png',
     },
     {
-      name: 'Shorts',
+      name: 'Maneirando TV',
+      link: 'https://www.youtube.com/@NetoeGuizao/featured',
+      icon: '../assets/mediaIcons/youtube.png',
+    },
+    {
+      name: 'Gui',
+      link: 'https://www.youtube.com/@Guimaneirando/featured',
+      icon: '../assets/mediaIcons/youtube.png',
+    },
+  ];
+
+  shortsLinks: SocialMedia[] = [
+    {
+      name: 'Shorts Oficial',
       link: 'https://www.youtube.com/@Maneirando/shorts',
       icon: '../assets/mediaIcons/shorts.png',
     },
     {
-      name: 'Instagram',
+      name: 'Netinho',
+      link: 'https://www.youtube.com/@oNetinho/shorts',
+      icon: '../assets/mediaIcons/shorts.png',
+    },
+    {
+      name: 'Shorts Maneirando',
+      link: 'https://www.youtube.com/@ShortsManeirando/featured',
+      icon: '../assets/mediaIcons/shorts.png',
+    },
+  ];
+
+  instagramLinks: SocialMedia[] = [
+    {
+      name: '@netolyra',
+      link: 'https://www.instagram.com/netolyra/',
+      icon: '../assets/mediaIcons/instagram.png',
+    },
+    {
+      name: '@netoeguizao',
       link: 'https://www.instagram.com/netoeguizao/',
       icon: '../assets/mediaIcons/instagram.png',
     },
     {
-      name: 'Tiktok',
+      name: '@oficialguizao',
+      link: 'https://www.instagram.com/oficialguizao/',
+      icon: '../assets/mediaIcons/instagram.png',
+    },
+  ];
+
+  tiktokLinks: SocialMedia[] = [
+    {
+      name: '@neto_lyra',
+      link: 'https://www.tiktok.com/@neto_lyra',
+      icon: '../assets/mediaIcons/tiktok.png',
+    },
+    {
+      name: '@netoeguizao',
       link: 'https://www.tiktok.com/@netoeguizao',
       icon: '../assets/mediaIcons/tiktok.png',
+    },
+    {
+      name: '@oficialguizao',
+      link: 'https://www.tiktok.com/@oficialguizao',
+      icon: '../assets/mediaIcons/tiktok.png',
+    },
+  ];
+
+  mediaLinks: SocialMedia[] = [
+    {
+      name: 'Plutotv',
+      link: 'https://pluto.tv/pt/search/details/movies/parodias-series-animes-y-filmes-famosos-br-2019-1-1',
+      icon: '../assets/mediaIcons/plutotv.png',
     },
     {
       name: 'Facebook',
@@ -38,11 +95,6 @@ export class AppComponent implements OnInit {
       name: 'Kwai',
       link: 'https://www.kwai.com/@netoeguizao',
       icon: '../assets/mediaIcons/kwai.png',
-    },
-    {
-      name: 'Plutotv',
-      link: 'https://pluto.tv/pt/search/details/movies/parodias-series-animes-y-filmes-famosos-br-2019-1-1',
-      icon: '../assets/mediaIcons/plutotv.png',
     },
   ];
 
