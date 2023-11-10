@@ -102,11 +102,21 @@ export class AppComponent implements OnInit {
 
   // MAIN
   slider: string[] = [
+    '../assets/slider/naruto.png',
     '../assets/slider/zodiaco.png',
     '../assets/slider/aranha.png',
     '../assets/slider/chave.png',
     '../assets/slider/lacasa.png',
-    '../assets/slider/naruto.png',
+    '../assets/slider/amongus.png',
+    '../assets/slider/animado.png',
+    '../assets/slider/batmano.png',
+    '../assets/slider/bbb.png',
+    '../assets/slider/branquelas.png',
+    '../assets/slider/espaço.png',
+    '../assets/slider/masterchef.png',
+    '../assets/slider/powerranger.png',
+    '../assets/slider/rick.png',
+    '../assets/slider/supermano.png',
   ];
 
   sliderCount: number = 0;

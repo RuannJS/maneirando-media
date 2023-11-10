@@ -137,6 +137,21 @@
         possuir audiência em transmissões em estreias de
         <span class="underline">100 mil espectadores.</span>
       </span>
+
+      <!-- TEXT 3  -->
+
+      <span
+        class="text-base font-light text-center sm:text-lg lg:text-xl xl:text-2xl"
+      >
+        Em vídeos apenas da cultura Geek, a dupla conta com mais de
+        <span class="font-bold underline"> 700 milhões de visualizações </span>
+        em vídeos como Naruto, Homem-Aranha, Chaves e muitos outros, sendo
+        considerado como
+        <span class="underline">
+          um dos maiores canais de esquetes e curta-metragens de paródia da
+          internet brasileira.</span
+        >
+      </span>
     </div>
   </section>
 
@@ -283,6 +298,7 @@
         <!-- YOUTUBE -->
         <div class="flex flex-col gap-1">
           <a
+            target="_blank"
             *ngFor="let youtube of youtubeLinks"
             [href]="youtube.link"
             class="flex flex-row gap-1 items-center hover:underline"
@@ -296,6 +312,7 @@
         <!-- SHORTS -->
         <div class="flex flex-col gap-1">
           <a
+            target="_blank"
             *ngFor="let shorts of shortsLinks"
             [href]="shorts.link"
             class="flex flex-row gap-1 items-center hover:underline"
@@ -314,6 +331,7 @@
         <!-- instagram -->
         <div class="flex flex-col gap-1">
           <a
+            target="_blank"
             *ngFor="let instagram of instagramLinks"
             [href]="instagram.link"
             class="flex flex-row gap-1 items-center hover:underline xl:ml-4"
@@ -327,6 +345,7 @@
         <!-- tiktok -->
         <div class="flex flex-col gap-1">
           <a
+            target="_blank"
             *ngFor="let tiktok of tiktokLinks"
             [href]="tiktok.link"
             class="flex flex-row gap-1 mr-8 xl:mr-16 items-center hover:underline"
@@ -344,6 +363,7 @@
         class="flex flex-row justify-around md:justify-center md:gap-10 xl:gap-20 px-3"
       >
         <a
+          target="_blank"
           *ngFor="let media of mediaLinks"
           [href]="media.link"
           class="flex flex-row gap-1 items-center hover:underline"
@@ -699,7 +719,7 @@
     >
   </div>
 
-  <img class="-mb-4" src="../assets/images/partners.png" alt="" />
+  <img class="-mb-4 w-full" src="../assets/images/partners.png" alt="" />
 
   <div class="px-3 bg-yellow-400 lg:px-8 pt-10 text-center 2xl:px-64">
     <div class="flex flex-col">
@@ -745,10 +765,27 @@
         <a
           class="text-base font-bold lg:text-lg"
           target="_blank"
-          href="maneirando.com.br"
+          href="http://www.maneirando.com.br"
           >maneirando.com.br</a
         >
       </div>
+    </div>
+
+    <div class="flex flex-col mt-10">
+      <span class="font-black italic text-2xl">Maneirando</span>
+      <span class="text-sm font-semibold"
+        ><span class="font-black">&copy;</span> Copyright 2020-2023</span
+      >
+    </div>
+
+    <div class="flex flex-col mt-5">
+      <span class="text-sm font-semibold">Design:</span>
+      <span class="text-lg font-black">Luiza Faria</span>
+    </div>
+
+    <div class="flex flex-col mt-2">
+      <span class="text-sm font-semibold">Desenvolvimento:</span>
+      <span class="text-lg font-black">Ruann Fagundes</span>
     </div>
   </div>
 </main>
